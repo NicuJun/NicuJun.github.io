@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "dependencies": {
@@ -27,6 +27,6 @@
     "typescript": "^5.4.5",
     "vite": "^5.3.1"
   },
-  "homepage": "https://nicujun.github.io/xs-landing"   
+  "homepage": "https://nicujun.github.io" 
   
 }
