@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #080808;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+}
+
+.text-xs-gradient {
+  background: linear-gradient(160deg, #f5d020 0%, #f5820d 55%, #e03000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
+
+.xs-card {
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.xs-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(245,130,13,0.4);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 24px rgba(245,130,13,0.08);
+}
+
+.xs-card-accent {
+  background: linear-gradient(#141414, #141414) padding-box,
+              linear-gradient(160deg, #f5d020, #f5820d, #e03000) border-box;
+  border: 1px solid transparent;
+  border-radius: 16px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f5d020, #f5820d);
+  color: #0a0a0a;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: 14px 32px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(245,130,13,0.3);
+}
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(245,130,13,0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #aaa;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: 13px 32px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-outline:hover {
+  border-color: rgba(245,130,13,0.5);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.nav-link {
+  position: relative;
+  color: #888;
+  transition: color 0.2s;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: linear-gradient(90deg, #f5d020, #e03000);
+  transition: width 0.3s ease;
+}
+.nav-link:hover { color: white; }
+.nav-link:hover::after { width: 100%; }
+
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(160deg, #f5d020, #f5820d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.tab-active {
+  background: linear-gradient(135deg, #f5d020, #f5820d) !important;
+  color: #080808 !important;
+  border-color: transparent !important;
+}
+
+.nutr-highlight { color: #f5d020; font-weight: 600; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #f5820d; }
+
+/* ── Animations ── */
+@keyframes particleRise {
+  0%   { transform: translateY(0) scale(1); opacity: 0.3; }
+  80%  { opacity: 0.15; }
+  100% { transform: translateY(-100vh) scale(0.2); opacity: 0; }
+}
+@keyframes gridDrift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 64px 64px; }
+}
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.07); }
+}
+@keyframes ambientPulse {
+  0%, 100% { opacity: 0.7; transform: translate(-50%,-50%) scale(1); }
+  50%       { opacity: 1;   transform: translate(-50%,-50%) scale(1.2); }
+}
