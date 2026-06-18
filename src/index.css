@@ -151,3 +151,10 @@
   0%, 100% { opacity: 0.7; transform: translate(-50%,-50%) scale(1); }
   50%       { opacity: 1;   transform: translate(-50%,-50%) scale(1.2); }
 }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes sliderFade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes spin360 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* Hide scrollbar on slider thumbnail rail */
+#showcase .overflow-x-auto::-webkit-scrollbar { display: none; }

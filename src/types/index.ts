@@ -12,6 +12,7 @@ export interface Product {
   name: string
   tagline: string
   desc: string
+  fullDesc?: string
   weight: string
   accentColor: string
   badge?: string
