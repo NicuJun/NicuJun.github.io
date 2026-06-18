@@ -5,7 +5,7 @@ import XsLogo from './XsLogo'
 interface NavbarProps { onShopClick: () => void }
 
 const LINKS = [
-  { label: 'Про XS™',  href: '#about' },
+  { label: 'Про XS™',  href: '#what-is-xs' },
 ]
 
 export default function Navbar({ onShopClick }: NavbarProps) {
